@@ -33,7 +33,8 @@ Actors, Aggregator
 
 
 ### Design Overview
-Redux has the concept
+Redux          - state, action, reducer, effect
+Event sourcing - state, command, event
 
 ### Examples
 
