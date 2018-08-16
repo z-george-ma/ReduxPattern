@@ -62,13 +62,14 @@ namespace ReduxPattern
             return await effector(actionState.OldState, actionState.NewState, actionState.Action).ConfigureAwait(continueOnCapturedContext);
         }
 
-        public static async Task<T> Catch<T>(this Task<T> self, Func<Exception, Task<T>> catchProc, bool continueOnCapturedContext = false)
+        public static async Task<T> Catch<TException, T>(this Task<T> self, Func<TException, Task<T>> catchProc, bool continueOnCapturedContext = false)
+            where TException: Exception
         {
             try
             {
                 return await self.ConfigureAwait(continueOnCapturedContext);
             }
-            catch(Exception e)
+            catch(TException e)
             {
                 return await catchProc(e).ConfigureAwait(continueOnCapturedContext);
             }
