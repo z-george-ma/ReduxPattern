@@ -8,10 +8,29 @@ Functional programming has a long history for back-end developers since ancient 
 
 This C# library is a simple coding pattern that allows you to reap some benefits of functional programming with little learning curve, minimal migration effort and absolutely no change to the platform / technology of your choice.
 
-### Case Study
+### Bedtime Story
+Startup e-commerce website
+Ruby on rails
+Racing condition - run out of money
+Additional check - account status, etc, etc
+Handle in the database
+
+More popular
+business logic become more complex
+Maintenance
+DDD, Orchestration
+
+Customer base grows
+Stability, Scalability, Reduce risk
+Microservice, EDA
+
+Performance, Laterncy, Availability
+Actors, Aggregator
+
 - Isolate side-effect
-- Dis
-- Common pattern for handling distributed 
+- Common pattern for handling distributed transaction
+- Error handling
+
 
 ### Design Overview
 Redux has the concept
