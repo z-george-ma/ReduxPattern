@@ -57,7 +57,7 @@ namespace ReduxPattern
     public class RetryContext<T>
     {
         internal Func<Task<T>> Execute { get; set; }
-        internal Task<T> Value { get; set; }
+        public Task<T> Value { get; internal set; }
         internal bool ContinueOnCapturedContext { get; set; }
     }
 }
@@ -88,8 +88,6 @@ namespace ReduxPattern.TaskExtension
             self.Value = self.Value.Retry<TException, T>(retryPolicy, self.Execute, self.ContinueOnCapturedContext);
             return self;
         }
-
-        public static Task<T> Value<T>(this RetryContext<T> self) => self.Value;
 
         private static async Task<T> Retry<TException, T>(this Task<T> self, RetryPolicy retryPolicy, Func<Task<T>> retryProc, bool continueOnCapturedContext)
             where TException : Exception
